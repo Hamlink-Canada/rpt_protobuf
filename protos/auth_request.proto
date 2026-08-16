@@ -1,0 +1,23 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "node.proto";
+
+service auth_request {
+    rpc auth_request (request) returns (response);
+}
+
+message response {
+    bool valid = 1;
+}
+
+message request {
+    // Google protobuf Timestamp message
+    // Time the new entry was added
+    google.protobuf.Timestamp timestamp = 1;
+
+    // The APP RPT Node ID
+    node node = 2;
+
+    // The node password;
+    string password = 3;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message node {
+    // The APP RPT Node ID
+    int64 id = 1;
+
+    // The Node IP address
+    string ipaddress = 2;
+
+    // The Node Port
+    int32 port = 3;
+
+    // The TTL for the entry, in seconds
+    int32 ttl = 4;
+
+    // String identifying what server added the entry
+    string server = 5;
+}

@@ -1,0 +1,11 @@
+# Ignore generated protobuf Python bindings and caches
+protobuf/
+*_pb2.py
+*_pb2.pyc
+__pycache__/
+
+# Python artifacts
+*.py[cod]
+
+# Credentials
+.netrc

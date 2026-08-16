@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "node.proto";
+
+message dns_update {
+    // Google protobuf Timestamp message
+    // Time the new entry was added
+    google.protobuf.Timestamp timestamp = 1;
+
+    // The APP RPT Node ID
+    node node = 2;
+}
