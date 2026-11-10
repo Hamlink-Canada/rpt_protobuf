@@ -13,8 +13,9 @@ If you are deploying a service, start with its own instructions:
 
 ## Choosing compatible service versions
 
-Each service pins this library to a full Git commit. Keep that pin when building a
-service from source, and use versioned service images for deployments. There is no
+Each service follows this library’s `main` branch when building from source.
+CI resolves that branch once per run so tests and image builds use the same revision.
+Use versioned service images or image digests for deployments. There is no
 need to regenerate bindings on a running service.
 
 The DNS messages describe when a registration was issued and the node's ID, IPv4
@@ -79,9 +80,9 @@ backend outage. Service tokens use `authorization: Bearer …` metadata. Generat
 32-character ASCII base64url passwords fit the AllStarLink client's 79-character
 limit and avoid its configuration delimiters.
 
-Install from a full Git SHA, or use the editable sibling checkout supported by the
-service repositories while developing changes together. Update consumer dependency
-pins and lockfiles when adopting a new library revision. Keep application code,
+Install from the `main` branch, or use the editable sibling checkout supported by the
+service repositories while developing changes together. Refresh the sibling checkout when adopting changes to `main`; update lockfiles
+when dependency metadata changes. Keep application code,
 configuration, and authentication implementations in their service projects.
 
 The [dependency ADR](docs/adr/0001-shared-schema-dependency.md) and
