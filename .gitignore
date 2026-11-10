@@ -1,11 +1,12 @@
-# Ignore generated protobuf Python bindings and caches
-protobuf/
-*_pb2.py
-*_pb2.pyc
 __pycache__/
-
-# Python artifacts
 *.py[cod]
-
-# Credentials
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.secrets.*
+.env
+credentials.csv
 .netrc
