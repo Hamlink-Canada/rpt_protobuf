@@ -7,9 +7,9 @@ release for this library.
 
 If you are deploying a service, start with its own instructions:
 
-- [DNS directory](https://github.com/Hamlink-Canada/dnsserver): serve node lookups.
-- [HTTP registrar](https://github.com/Hamlink-Canada/pyHTTP-Register): accept HTTP registrations.
-- [IAX registrar](https://github.com/Hamlink-Canada/pyIAX-Register): accept IAX registrations.
+- [DNS directory](https://github.com/Hamlink-Canada/Register-DNS_Server): serve node lookups.
+- [HTTP registrar](https://github.com/Hamlink-Canada/Register-pyHTTP): accept HTTP registrations.
+- [IAX registrar](https://github.com/Hamlink-Canada/Register-pyIAX): accept IAX registrations.
 
 ## Choosing compatible service versions
 
