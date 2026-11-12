@@ -25,12 +25,11 @@ messages are not supported by the updated services.
 
 The credential lookup interface allows an authorized registrar to retrieve a node's
 generated password. The registrar verifies the client's credentials locally; IAX
-challenge handling stays in the IAX project. A production central credential server
-is a separate, future project.
+challenge handling stays in the IAX project. The Central Auth repository implements the production credential server.
 
 Credential lookup requires an authenticated, authorized service connection. Clients
-use verified TLS with a service token or mutual TLS. The server must enforce which
-credentials each registrar may retrieve and never include passwords in logs or
+use verified TLS with a service token or mutual TLS. Central Auth enforces which
+credentials each registrar may retrieve and never includes passwords in logs or
 error messages. Registrar caches can delay password changes until their configured
 TTL expires; see the service documentation when planning a rotation.
 
@@ -85,9 +84,8 @@ service repositories while developing changes together. Refresh the sibling chec
 when dependency metadata changes. Keep application code,
 configuration, and authentication implementations in their service projects.
 
-The [dependency ADR](docs/adr/0001-shared-schema-dependency.md) and
-[authentication ADR](docs/adr/0002-local-authentication-with-credential-lookup.md)
-record the reasons for these choices.
+See [current decisions](docs/decisions.md) for schema ownership, dependency, and
+credential verification rationale.
 
 ## License
 
