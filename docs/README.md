@@ -3,6 +3,6 @@
 This library owns the protobuf schemas and generated Python bindings shared by the
 registration and DNS projects. It has no runtime service.
 
-Start with the repository [README](../README.md) for package use and schema
-generation. See [decisions](decisions.md) for dependency and schema ownership and
-[glossary](glossary.md) for domain terms.
+The repository [README](../README.md) covers package use and schema generation.
+[Decisions](decisions.md) records dependency and schema ownership; the
+[glossary](glossary.md) defines shared terms.
