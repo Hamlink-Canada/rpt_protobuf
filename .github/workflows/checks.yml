@@ -28,3 +28,10 @@ jobs:
       - run: make check test build
       - run: uv run --locked python scripts/generate.py
       - run: git diff --exit-code -- src/rpt_protobuf
+      - name: Reject untracked generated files
+        run: |
+          untracked=$(git ls-files --others --exclude-standard -- src/rpt_protobuf)
+          if [ -n "$untracked" ]; then
+            printf 'Untracked generated files:\n%s\n' "$untracked"
+            exit 1
+          fi

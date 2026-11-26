@@ -28,10 +28,12 @@ generated password. The registrar verifies the client's credentials locally; IAX
 challenge handling stays in the IAX project. The Central Auth repository implements the production credential server.
 
 Credential lookup requires an authenticated, authorized service connection. Clients
-use verified TLS with a service token or mutual TLS. Central Auth enforces which
-credentials each registrar may retrieve and never includes passwords in logs or
-error messages. Registrar caches can delay password changes until their configured
-TTL expires; see the service documentation when planning a rotation.
+use verified TLS with a service token or mutual TLS. Central Auth authorizes the
+registrar connection, then permits that registrar to retrieve any node credential
+available from its configured backend; it does not enforce per-node ownership.
+Central Auth never includes passwords in logs or error messages. Registrar caches
+can delay password changes until their configured TTL expires; see the service
+documentation when planning a rotation.
 
 ## Schema reference
 
