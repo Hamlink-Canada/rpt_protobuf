@@ -1,0 +1,4 @@
+include uv.lock build_proto.sh GLOSSARY.md
+recursive-include protos *.proto
+recursive-include scripts *.py
+recursive-include docs *.md

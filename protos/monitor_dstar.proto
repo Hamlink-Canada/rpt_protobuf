@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package monitor_dstar;
+
+import "google/protobuf/timestamp.proto";
+
+message HeaderEvent {
+  google.protobuf.Timestamp timestamp = 1;
+  string header_type = 2;
+  string my_call = 3;
+  string my_id = 4;
+  string your_call = 5;
+  string rpt1 = 6;
+  string rpt2 = 7;
+  string flags = 8;
+  string source = 9;
+  string raw = 10;
+}
+
+message LinkEvent {
+  google.protobuf.Timestamp timestamp = 1;
+  string link_kind = 2;
+  string type = 3;
+  string rptr = 4;
+  string refl = 5;
+  string dir = 6;
+  string raw = 7;
+}

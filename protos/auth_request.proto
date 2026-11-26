@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package rpt.auth.v1;
+
+// Called only by authorized registration services over authenticated TLS.
+// Implementations must authorize lookup scope and never log credential values.
+service CredentialService {
+    rpc GetNodeCredential (CredentialRequest) returns (CredentialResponse);
+}
+message CredentialRequest {
+    int64 node_id = 1;
+}
+message CredentialResponse {
+    // Missing nodes use gRPC NOT_FOUND, unavailable providers UNAVAILABLE.
+    // Generated ASCII shared password; never an authentication decision.
+    string password = 1;
+}
